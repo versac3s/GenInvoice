@@ -57,9 +57,13 @@ function syncInput(inputId, previewId) {
   ["clientName", "previewClientName"],
   ["clientCompany", "previewClientCompany"],
   ["clientAddress", "previewClientAddress"],
-  ["clientCity", "previewClientCityZip"], // <- Fix here
+  ["clientCity", "previewClientCityZip"],
   ["clientPhone", "previewClientPhone"],
   ["clientEmail", "previewClientEmail"],
+  ["bankName", "previewBankName"],
+  ["accountNumber", "previewAccountNumber"],
+  ["ifscCode", "previewIFSC"],
+  ["accountHolder", "previewAccountHolder"],
 ].forEach(([inputId, previewId]) => syncInput(inputId, previewId));
 
 [["invoiceComment", "previewComment"]].forEach(([inputId, previewId]) =>

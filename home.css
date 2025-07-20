@@ -2,8 +2,8 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Raleway", sans-serif;
-  background-color: #f9f6ef;
-  color: #1f1f1f;
+  background-color: #F9FAFB;
+  color:  #111827;
   text-align: center;
 }
 
@@ -11,10 +11,10 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;
-  border-bottom: 2px solid #282828;
-  background-color: #f9f6ef;
-  color: #1f1f1f;
+  padding-left: 15px;
+  border-bottom: 1.50px solid  #111827;
+  background-color: #F9FAFB;
+  color:  #111827;
   text-decoration: none;
 }
 
@@ -73,23 +73,20 @@ body {
 }
 
 .cta {
-  font-family: "Source Code Pro", sans-serif;
-  margin-top: 20px;
+  font-family:"Raleway", sans-serif;
+  margin-top: 30px;
   padding: 10px 20px;
-  font-weight: 600;
-  font-size: 1rem;
-  background-color: #eda398;
-  color: #282828;
-  border: 2px solid #282828;
-  border-radius: 8px;
+  font-weight: 500;
+  font-size: 16px;
+  background-color: #4F46E5;
+  color: #ffffff;
+  border-radius: 24px;
+  border: none;
   cursor: pointer;
-  transition: background-color 0.2s ease;
 }
 
 .cta:hover {
-  background-color: #193497;
-  color: #f9f6ef;
-  transform: scale(1);
+  transform: scale(1.05);
   transition: all 0.3s ease;
 }
 

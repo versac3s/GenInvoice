@@ -19,8 +19,12 @@
     <header class="navbar">
       <div class="logo"></div>
       <div class="nav-actions">
-        <a href="index.html"><p>Home</p></a>
-        <a href="invoice.html"><p>Invoice</p></a>
+        <a href="index.html" style="text-decoration: none; color: #1f1f1f"
+          ><p>Home</p></a
+        >
+        <a href="invoice.html" style="text-decoration: none; color: #1f1f1f"
+          ><p>Invoice</p></a
+        >
         <!-- <button class="login-btn">Log in</button>
         <div class="user-icon">
           <button
@@ -54,7 +58,7 @@
     <h1>Create Invoice</h1>
     <div class="invoice-container">
       <section class="invoice-form">
-        <h2>Invoice Form</h2>
+        <h2 style="color: #A78BFA;">Invoice Form</h2>
 
         <h3>Company Information</h3>
         <table class="form-table">
@@ -94,6 +98,28 @@
                 id="companyEmail"
                 placeholder="your@email.com"
               />
+            </td>
+          </tr>
+          <tr>
+            <td><label for="bankName">Bank Name</label></td>
+            <td><input type="text" id="bankName" placeholder="ABC Bank" /></td>
+          </tr>
+          <tr>
+            <td><label for="accountNumber">Account Number</label></td>
+            <td>
+              <input type="text" id="accountNumber" placeholder="1234567890" />
+            </td>
+          </tr>
+          <tr>
+            <td><label for="ifscCode">IFSC / SWIFT Code</label></td>
+            <td>
+              <input type="text" id="ifscCode" placeholder="ABC0001234" />
+            </td>
+          </tr>
+          <tr>
+            <td><label for="accountHolder">Account Holder Name</label></td>
+            <td>
+              <input type="text" id="accountHolder" placeholder="John Doe" />
             </td>
           </tr>
         </table>
@@ -229,7 +255,7 @@
         </button>
       </section>
       <section class="invoice-preview" id="invoice-preview">
-        <h2>Invoice Preview</h2>
+        <h2 style="color: #A78BFA;">Invoice Preview</h2>
         <div class="invoice-box" id="invoiceBox">
           <table class="form-preview">
             <tr>
@@ -239,12 +265,19 @@
                 <span id="previewCompanyCityZip">[City, ST ZIP Code]</span
                 ><br />
                 Phone: <span id="previewCompanyPhone">[Phone]</span> Email:
-                <span id="previewCompanyEmail">[Email]</span>
+                <span id="previewCompanyEmail">[Email]</span><br/>
+                Bank Name: <span id="previewBankName">[Bank Name]</span><br />
+                Account Number:
+                <span id="previewAccountNumber">[Account No.]</span><br />
+                IFSC / SWIFT Code: <span id="previewIFSC">[IFSC/SWIFT]</span
+                ><br />
+                Account Holder:
+                <span id="previewAccountHolder">[Holder Name]</span>
               </td>
               <td style="text-align: right">
                 <div style="display: inline-block; text-align: center">
                   <img
-                    src="geninvoice-logo.png"
+                    src="gilogo.png"
                     alt="GENINVOICE Logo"
                     style="height: 60px"
                   />

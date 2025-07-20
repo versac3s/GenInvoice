@@ -1,7 +1,7 @@
 body {
   font-family: "Raleway", sans-serif;
-  background-color: #f9f6ef;
-  color: #1f1f1f;
+  background-color: #F9FAFB;
+  color:  #111827;
   margin: 5px;
 }
 
@@ -9,10 +9,10 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;
-  border-bottom: 2px solid #282828;
-  background-color: #f9f6ef;
-  color: #1f1f1f;
+  padding-left: 15px;
+  border-bottom: 2px solid  #111827;
+  background-color: #F9FAFB;
+  color:  #111827;
   text-decoration: none;
 }
 
@@ -112,14 +112,14 @@ body {
 
 .item-table th,
 .item-table td {
-  border: 1px solid #1f1f1f;
+  border: 1px solid  #111827;
   padding: 10px 12px;
   text-align: left;
 }
 
 .item-table th {
-  background-color: #f9f6ef;
-  color: #333;
+  background-color: #A78BFA;
+  color: #ffffff;
   font-weight: 600;
 }
 
@@ -128,7 +128,7 @@ body {
   border: none;
   background-color: #ffffff;
   font-size: 14px;
-  color: #333;
+  color:  #111827;
 }
 
 .item-table tr:nth-child(even) {
@@ -171,7 +171,7 @@ input:disabled {
   border: none;
   margin-top: 8px;
   cursor: pointer;
-  color: #193497;
+  color: #A78BFA;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -206,16 +206,19 @@ input:disabled {
   padding: 10px;
   vertical-align: top;
   text-align: left;
+  font-family: Arial, sans-serif;
 }
 
 .form-preview h3 {
   margin: 0;
   color: #193497;
+  font-family: Arial, sans-serif;
 }
 
 .form-preview h4 {
   margin: 10px 0 5px;
   color: #193497;
+  font-family: Arial, sans-serif;
 }
 
 #itemsTable {
@@ -232,14 +235,17 @@ input:disabled {
   border: 1px solid #ccc;
   padding: 10px;
   text-align: left;
+  font-family: Arial, sans-serif;
 }
 
 #itemsTable th {
-  background-color: #f9f6ef;
+  background-color: #F9FAFB;
+  font-family: Arial, sans-serif;
 }
 #billingTotal {
   text-align: right;
   font-size: 14px;
+  font-family: Arial, sans-serif;
 }
 
 #downloadPDF {
@@ -250,7 +256,7 @@ input:disabled {
   margin-bottom: 10px;
   padding: 10px 20px;
   font-size: 14px;
-  background-color: #4a90e2;
+  background-color: #A78BFA;
   color: white;
   border: none;
   border-radius: 6px;
@@ -260,6 +266,7 @@ input:disabled {
 #commentTable {
   margin-top: 20px;
   margin-bottom: 20px;
+  font-family: Arial, sans-serif;
 }
 input[readonly] {
   border: none;
@@ -269,18 +276,20 @@ input[readonly] {
   padding: 2px 0;
   width: auto;
   text-align: right;
+
 }
 .invoice-footer {
   border-top: 1px solid #ccc;
   width: 100%;
   text-align: left;
-  margin-top: 350px;
+  margin-top: 300px;
+  font-family: Arial, sans-serif;
 }
 
 #thankYou {
   font-size: 18px;
   font-weight: bold;
-  color: #1f1f1f;
+  color:  #111827;
 }
 #downloadPDF:hover {
   transform: scale(1.05);
