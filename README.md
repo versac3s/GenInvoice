@@ -48,12 +48,12 @@ To get started:
     ```bash
    git push origin feature/your-feature-name
 6. **Open a Pull Request (PR):**
-    Go to your forked repository on GitHub
-    Click on Compare & pull request
-    Provide a clear title and description of your changes
-    Submit the PR to the main branch of the original repository
+    - Go to your forked repository on GitHub
+    - Click on Compare & pull request
+    - Provide a clear title and description of your changes
+    - Submit the PR to the main branch of the original repository
 7. **Collaborate and Improve:**
-    Your PR will be reviewed
-    You may be asked to make some changes
-    Once approved, your contribution will be merged 🎉
+    - Your PR will be reviewed
+    - You may be asked to make some changes
+    - Once approved, your contribution will be merged 🎉
 
