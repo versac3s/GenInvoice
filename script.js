@@ -8,7 +8,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function applySavedTheme() {
   // Retrieve the theme from local storage. Default is "light".
-  const savedTheme = window.localStorage?.getItem("theme") || "light";
+  // Added fallback for window.localStorage for broader browser compatibility.
+  const savedTheme = (window.localStorage && window.localStorage.getItem("theme")) || "light";
   const themeToggleBtn = document.getElementById("theme-toggle");
   const moonIcon = document.querySelector(".moon-icon");
   const sunIcon = document.querySelector(".sun-icon");
@@ -37,15 +38,24 @@ function initializeEventListeners() {
     themeToggleBtn.addEventListener("click", () => {
       document.body.classList.toggle("dark-theme");
 
+      // Check if dark theme is currently active.
       if (document.body.classList.contains("dark-theme")) {
-        if (window.localStorage) {
-          window.localStorage.setItem("theme", "dark");
+        // If dark theme is on, save "dark" to local storage.
+        // Added try-catch for robust localStorage operations.
+        try {
+          window.localStorage?.setItem("theme", "dark");
+        } catch (e) {
+          console.warn("Failed to save theme preference:", e);
         }
         moonIcon.style.display = "none";
         sunIcon.style.display = "block";
       } else {
-        if (window.localStorage) {
-          window.localStorage.setItem("theme", "light");
+        // If dark theme is off, save "light" to local storage.
+        // Added try-catch for robust localStorage operations.
+        try {
+          window.localStorage?.setItem("theme", "light");
+        } catch (e) {
+          console.warn("Failed to save theme preference:", e);
         }
         moonIcon.style.display = "block";
         sunIcon.style.display = "none";
@@ -275,12 +285,25 @@ function updatePreview() {
 function downloadPDF() {
   updatePreview();
 
+  const downloadBtn = document.getElementById("downloadPDF");
+  // Store original button content (including SVG) and disable button
+  const originalButtonContent = downloadBtn.innerHTML;
+  downloadBtn.disabled = true;
+  downloadBtn.innerHTML = `
+    <svg class="spinner" viewBox="0 0 50 50">
+      <circle class="path" cx="25" cy="25" r="20" fill="none" stroke-width="5"></circle>
+    </svg>
+    Generating PDF...`;
+
   requestAnimationFrame(() => {
     setTimeout(() => {
       const invoiceBox = document.getElementById("invoiceBox");
 
       if (!invoiceBox || typeof html2pdf === "undefined") {
-        alert("PDF download functionality is not available");
+        alert("PDF download functionality is not available.");
+        // Re-enable button and restore content even if functionality is not available
+        downloadBtn.disabled = false;
+        downloadBtn.innerHTML = originalButtonContent;
         return;
       }
 
@@ -300,7 +323,22 @@ function downloadPDF() {
         },
       };
 
-      html2pdf().set(opt).from(invoiceBox).save();
+      html2pdf()
+        .set(opt)
+        .from(invoiceBox)
+        .save()
+        .then(() => {
+          // Re-enable button and restore content after PDF is saved
+          downloadBtn.disabled = false;
+          downloadBtn.innerHTML = originalButtonContent;
+        })
+        .catch((error) => {
+          console.error("Error generating PDF:", error);
+          alert("Failed to generate PDF. Please try again.");
+          // Re-enable button and restore content on error
+          downloadBtn.disabled = false;
+          downloadBtn.innerHTML = originalButtonContent;
+        });
     }, 300);
   });
 }
