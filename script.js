@@ -6,60 +6,49 @@ document.addEventListener("DOMContentLoaded", () => {
   initializeEventListeners();
 });
 
+// Caches and returns references to theme-related DOM elements.
+function getThemeElements() {
+  return {
+    themeToggleBtn: document.getElementById("theme-toggle"),
+    moonIcon: document.querySelector(".moon-icon"),
+    sunIcon: document.querySelector(".sun-icon"),
+    body: document.body 
+  };
+}
+
+// Toggles the visibility of moon/sun icons based on the current theme.
+function toggleThemeIcons(moonIcon, sunIcon, isDark) {
+  moonIcon.style.display = isDark ? "none" : "block";
+  sunIcon.style.display = isDark ? "block" : "none";
+}
+
 function applySavedTheme() {
   // Retrieve the theme from local storage. Default is "light".
-  // Added fallback for window.localStorage for broader browser compatibility.
   const savedTheme = (window.localStorage && window.localStorage.getItem("theme")) || "light";
-  const themeToggleBtn = document.getElementById("theme-toggle");
-  const moonIcon = document.querySelector(".moon-icon");
-  const sunIcon = document.querySelector(".sun-icon");
+  const { themeToggleBtn, moonIcon, sunIcon, body } = getThemeElements();
 
-  if (!themeToggleBtn || !moonIcon || !sunIcon) return;
+  if (!themeToggleBtn || !moonIcon || !sunIcon || !body) return;
 
-  // Apply "dark-theme" class to the body based on saved theme.
-  if (savedTheme === "dark") {
-    document.body.classList.add("dark-theme");
-    moonIcon.style.display = "none";
-    sunIcon.style.display = "block";
-  } else {
-    document.body.classList.remove("dark-theme");
-    moonIcon.style.display = "block";
-    sunIcon.style.display = "none";
-  }
+  const isDark = savedTheme === "dark";
+  body.classList.toggle("dark-theme", isDark); 
+  toggleThemeIcons(moonIcon, sunIcon, isDark); 
 }
 
 function initializeEventListeners() {
-  const themeToggleBtn = document.getElementById("theme-toggle");
-  const moonIcon = document.querySelector(".moon-icon");
-  const sunIcon = document.querySelector(".sun-icon");
+  const { themeToggleBtn, moonIcon, sunIcon, body } = getThemeElements(); 
 
   // Attach click listener to the theme toggle button.
-  if (themeToggleBtn && moonIcon && sunIcon) {
+  if (themeToggleBtn && moonIcon && sunIcon && body) {
     themeToggleBtn.addEventListener("click", () => {
-      document.body.classList.toggle("dark-theme");
+      body.classList.toggle("dark-theme");
+      const isDark = body.classList.contains("dark-theme");
 
-      // Check if dark theme is currently active.
-      if (document.body.classList.contains("dark-theme")) {
-        // If dark theme is on, save "dark" to local storage.
-        // Added try-catch for robust localStorage operations.
-        try {
-          window.localStorage?.setItem("theme", "dark");
-        } catch (e) {
-          console.warn("Failed to save theme preference:", e);
-        }
-        moonIcon.style.display = "none";
-        sunIcon.style.display = "block";
-      } else {
-        // If dark theme is off, save "light" to local storage.
-        // Added try-catch for robust localStorage operations.
-        try {
-          window.localStorage?.setItem("theme", "light");
-        } catch (e) {
-          console.warn("Failed to save theme preference:", e);
-        }
-        moonIcon.style.display = "block";
-        sunIcon.style.display = "none";
+      try {
+        window.localStorage?.setItem("theme", isDark ? "dark" : "light");
+      } catch (e) {
+        console.warn("Failed to save theme preference:", e);
       }
+      toggleThemeIcons(moonIcon, sunIcon, isDark); 
     });
   }
 
@@ -155,7 +144,13 @@ function syncInput(inputId, previewId) {
   const preview = document.getElementById(previewId);
   if (input && preview) {
     input.addEventListener("input", () => {
-      const placeholder = `[${previewId.replace("preview", "").replace("bottom", "")}]`;
+      // NEW: More robust and readable placeholder generation
+      const fieldName = previewId
+        .replace(/^(preview|bottom)/, "") // Remove 'preview' or 'bottom' prefix
+        .replace(/([A-Z])/g, " $1") // Add space before capital letters
+        .toLowerCase() // Convert to lowercase
+        .trim(); // Trim any leading/trailing spaces
+      const placeholder = `[${fieldName}]`;
       preview.innerText = input.value || placeholder;
     });
   }
@@ -286,7 +281,6 @@ function downloadPDF() {
   updatePreview();
 
   const downloadBtn = document.getElementById("downloadPDF");
-  // Store original button content (including SVG) and disable button
   const originalButtonContent = downloadBtn.innerHTML;
   downloadBtn.disabled = true;
   downloadBtn.innerHTML = `
@@ -301,7 +295,6 @@ function downloadPDF() {
 
       if (!invoiceBox || typeof html2pdf === "undefined") {
         alert("PDF download functionality is not available.");
-        // Re-enable button and restore content even if functionality is not available
         downloadBtn.disabled = false;
         downloadBtn.innerHTML = originalButtonContent;
         return;
@@ -328,14 +321,12 @@ function downloadPDF() {
         .from(invoiceBox)
         .save()
         .then(() => {
-          // Re-enable button and restore content after PDF is saved
           downloadBtn.disabled = false;
           downloadBtn.innerHTML = originalButtonContent;
         })
         .catch((error) => {
           console.error("Error generating PDF:", error);
           alert("Failed to generate PDF. Please try again.");
-          // Re-enable button and restore content on error
           downloadBtn.disabled = false;
           downloadBtn.innerHTML = originalButtonContent;
         });
