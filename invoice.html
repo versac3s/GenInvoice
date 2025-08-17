@@ -283,9 +283,10 @@
                   />
                 </div>
                 <br />
-                <label for="invoiceNumber" style="font-size: 14px"
+                <label for="invoiceNumber"
                   >INVOICE #</label
                 >
+                <br class="invoice-break" />
                 <input
                   type="text"
                   id="invoiceNumber"
@@ -293,7 +294,7 @@
                   readonly
                 /><br />
 
-                <label for="invoiceDate" style="font-size: 14px">DATE:</label>
+                <label for="invoiceDate">DATE:</label>
                 <input
                   type="date"
                   id="invoiceDate"
@@ -372,6 +373,8 @@
         </div>
       </section>
     </div>
-    <button id="downloadPDF">Download PDF</button>
+    <div class="download-pdf-btn">
+      <button id="downloadPDF">Download PDF</button>
+    </div>
   </body>
 </html>

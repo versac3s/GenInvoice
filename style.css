@@ -102,6 +102,16 @@ body {
   box-sizing: border-box;
   background-color: #fdfdfd;
 }
+
+.form-table textarea{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+
+    width: 100%;
+    resize: none;
+}
+
 .item-table {
   width: 100%;
   border-collapse: collapse;
@@ -176,6 +186,7 @@ input:disabled {
   align-items: center;
   justify-content: center;
   transition: color 0.3s ease;
+  margin-bottom: 1rem;
 }
 
 #add-row-btn svg {
@@ -221,6 +232,10 @@ input:disabled {
   font-family: Arial, sans-serif;
 }
 
+.download-pdf-btn{
+  max-width: 1536px;
+}
+
 #itemsTable {
   width: 100%;
   border-collapse: collapse;
@@ -242,18 +257,35 @@ input:disabled {
   background-color: #F9FAFB;
   font-family: Arial, sans-serif;
 }
+
 #billingTotal {
   text-align: right;
   font-size: 14px;
   font-family: Arial, sans-serif;
 }
 
+/* fix the overflow for invoice number */
+#invoiceNumber,
+#invoiceDate {
+  padding: 3px;
+  font-size: 14px;
+}
+
+.form-preview td[style*="text-align: right"] {
+  min-width: 220px;
+  white-space: nowrap;
+}
+
+.form-preview td[style*="text-align: right"] > div {
+  margin: 0 auto 10px auto;
+}
+
 #downloadPDF {
   display: block;
-  margin-top: 10px;
+  margin-top: 20px;
   margin-left: auto;
-  margin-right: 30px;
-  margin-bottom: 10px;
+  margin-right: .7rem;
+  margin-bottom: 20px;
   padding: 10px 20px;
   font-size: 14px;
   background-color: #A78BFA;
@@ -263,11 +295,13 @@ input:disabled {
   cursor: pointer;
   transition: transform 0.3s ease, background-color 0.3s ease;
 }
+
 #commentTable {
   margin-top: 20px;
   margin-bottom: 20px;
   font-family: Arial, sans-serif;
 }
+
 input[readonly] {
   border: none;
   outline: none;
@@ -278,6 +312,7 @@ input[readonly] {
   text-align: right;
 
 }
+
 .invoice-footer {
   border-top: 1px solid #ccc;
   width: 100%;
@@ -295,8 +330,10 @@ input[readonly] {
   transform: scale(1.05);
   background-color: #3a78c2;
 }
+
 /* Responsive */
-@media (max-width: 768px) {
+/* Mobile phones & Tablets */
+@media (max-width: 1024px) {
   .invoice-container {
     flex-direction: column;
   }
@@ -305,5 +342,104 @@ input[readonly] {
   .invoice-preview {
     width: 100%;
     margin: 20px 0;
+    padding: 10px;
+  }
+
+  .invoice-container {
+    width: 90%;
+  }
+  
+  .invoice-form{
+    padding: 0 0 0 1rem;
+  }
+  
+  .form-table {
+    display: block;
+    table-layout: fixed;
+  }
+  
+  .form-table tr {
+    display: block;
+    margin-bottom: 15px;
+  }
+  
+  .form-table td {
+    display: block;
+    padding: 5px 0;
+    overflow-x: hidden;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+  }
+  
+  .form-table td:first-child {
+    font-weight: bold;
+    padding-bottom: 2px;
+  }
+
+  .currency-selector{
+    width: 90%;
+    margin: 0;
+    gap: 8px;
+  }
+
+  
+  .currency-selector select, .currency-selector input{
+    /*fits better on smaller screens */
+    width:50%;
+  }
+
+  .item-table th,
+  .item-table td {
+    padding: 10px;
+  }
+
+    .form-preview,
+  .form-preview tbody,
+  .form-preview tr,
+  .form-preview td {
+    display: block;
+    width: 100%;
+  }
+  
+  .form-preview td {
+    border: none;
+    border-bottom: 1px solid #eee;
+    padding: 8px 5px;
+  }
+  
+  .form-preview td[colspan="2"],
+  .form-preview td[colspan="3"] {
+    padding-bottom: 15px;
+  }
+  
+  .form-preview td[style*="text-align: right"] {
+    text-align: left !important;
+  }
+  
+  .form-preview img {
+    height: 50px !important;
+    margin-bottom: 10px;
+  }
+
+  .invoice-break{
+    display: none;
+  }
+
+  .form-table textarea {
+    resize: none;
+  }
+
+  #invoiceNumber {
+    text-align: left;
+    padding: 2px 2px;
+  }
+  
+  #itemsTable {
+    overflow-x: auto;
+    display: block;
+  }
+
+  #downloadPDF{
+    margin: 0 auto;
   }
 }
