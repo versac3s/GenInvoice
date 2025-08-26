@@ -277,59 +277,31 @@ function updatePreview() {
   });
 }
 
-function downloadPDF() {
-  updatePreview();
+//Handle download PDF button
+document
+  .getElementById("downloadPDF")
+  .addEventListener("click", async function () {
+    updatePreview();
 
-  const downloadBtn = document.getElementById("downloadPDF");
-  const originalButtonContent = downloadBtn.innerHTML;
-  downloadBtn.disabled = true;
-  downloadBtn.innerHTML = `
-    <svg class="spinner" viewBox="0 0 50 50">
-      <circle class="path" cx="25" cy="25" r="20" fill="none" stroke-width="5"></circle>
-    </svg>
-    Generating PDF...`;
+    const loader = document.getElementById("pdfLoader");
+    loader.style.display = "flex"; // Show loader
 
-  requestAnimationFrame(() => {
-    setTimeout(() => {
+    try {
       const invoiceBox = document.getElementById("invoiceBox");
-
-      if (!invoiceBox || typeof html2pdf === "undefined") {
-        alert("PDF download functionality is not available.");
-        downloadBtn.disabled = false;
-        downloadBtn.innerHTML = originalButtonContent;
-        return;
-      }
 
       const opt = {
         margin: 0.5,
         filename: "invoice.pdf",
         image: { type: "jpeg", quality: 0.98 },
-        html2canvas: {
-          scale: 2,
-          useCORS: true,
-          logging: false,
-        },
-        jsPDF: {
-          unit: "in",
-          format: "a4",
-          orientation: "portrait",
-        },
+        html2canvas: { scale: 2 },
+        jsPDF: { unit: "in", format: "a4", orientation: "portrait" },
       };
 
-      html2pdf()
-        .set(opt)
-        .from(invoiceBox)
-        .save()
-        .then(() => {
-          downloadBtn.disabled = false;
-          downloadBtn.innerHTML = originalButtonContent;
-        })
-        .catch((error) => {
-          console.error("Error generating PDF:", error);
-          alert("Failed to generate PDF. Please try again.");
-          downloadBtn.disabled = false;
-          downloadBtn.innerHTML = originalButtonContent;
-        });
-    }, 300);
+      await html2pdf().set(opt).from(invoiceBox).save();
+    } catch (err) {
+      console.error("PDF generation failed", err);
+      alert("Something went wrong while generating the PDF");
+    } finally {
+      loader.style.display = "none";
+    }
   });
-}
