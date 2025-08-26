@@ -1,7 +1,7 @@
 body {
   font-family: "Raleway", sans-serif;
-  background-color: #F9FAFB;
-  color:  #111827;
+  background-color: #f9fafb;
+  color: #111827;
   margin: 5px;
 }
 
@@ -10,9 +10,9 @@ body {
   justify-content: space-between;
   align-items: center;
   padding-left: 15px;
-  border-bottom: 2px solid  #111827;
-  background-color: #F9FAFB;
-  color:  #111827;
+  border-bottom: 2px solid #111827;
+  background-color: #f9fafb;
+  color: #111827;
   text-decoration: none;
 }
 
@@ -112,13 +112,13 @@ body {
 
 .item-table th,
 .item-table td {
-  border: 1px solid  #111827;
+  border: 1px solid #111827;
   padding: 10px 12px;
   text-align: left;
 }
 
 .item-table th {
-  background-color: #A78BFA;
+  background-color: #a78bfa;
   color: #ffffff;
   font-weight: 600;
 }
@@ -128,7 +128,7 @@ body {
   border: none;
   background-color: #ffffff;
   font-size: 14px;
-  color:  #111827;
+  color: #111827;
 }
 
 .item-table tr:nth-child(even) {
@@ -171,7 +171,7 @@ input:disabled {
   border: none;
   margin-top: 8px;
   cursor: pointer;
-  color: #A78BFA;
+  color: #a78bfa;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -239,7 +239,7 @@ input:disabled {
 }
 
 #itemsTable th {
-  background-color: #F9FAFB;
+  background-color: #f9fafb;
   font-family: Arial, sans-serif;
 }
 #billingTotal {
@@ -256,7 +256,7 @@ input:disabled {
   margin-bottom: 10px;
   padding: 10px 20px;
   font-size: 14px;
-  background-color: #A78BFA;
+  background-color: #a78bfa;
   color: white;
   border: none;
   border-radius: 6px;
@@ -276,7 +276,6 @@ input[readonly] {
   padding: 2px 0;
   width: auto;
   text-align: right;
-
 }
 .invoice-footer {
   border-top: 1px solid #ccc;
@@ -289,7 +288,7 @@ input[readonly] {
 #thankYou {
   font-size: 18px;
   font-weight: bold;
-  color:  #111827;
+  color: #111827;
 }
 #downloadPDF:hover {
   transform: scale(1.05);

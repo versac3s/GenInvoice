@@ -200,11 +200,16 @@ document.addEventListener("click", function (e) {
   }
 });
 
-document.getElementById("downloadPDF").addEventListener("click", function () {
-  updatePreview();
+//Handle download PDF button
+document
+  .getElementById("downloadPDF")
+  .addEventListener("click", async function () {
+    updatePreview();
 
-  requestAnimationFrame(() => {
-    setTimeout(() => {
+    const loader = document.getElementById("pdfLoader");
+    loader.style.display = "flex"; // Show loader
+
+    try {
       const invoiceBox = document.getElementById("invoiceBox");
 
       const opt = {
@@ -215,7 +220,11 @@ document.getElementById("downloadPDF").addEventListener("click", function () {
         jsPDF: { unit: "in", format: "a4", orientation: "portrait" },
       };
 
-      html2pdf().set(opt).from(invoiceBox).save();
-    }, 300);
+      await html2pdf().set(opt).from(invoiceBox).save();
+    } catch (err) {
+      console.error("PDF generation failed", err);
+      alert("Something went wrong while generating the PDF");
+    } finally {
+      loader.style.display = "none";
+    }
   });
-});

@@ -2,8 +2,8 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Raleway", sans-serif;
-  background-color: #F9FAFB;
-  color:  #111827;
+  background-color: #f9fafb;
+  color: #111827;
   text-align: center;
 }
 
@@ -12,9 +12,9 @@ body {
   justify-content: space-between;
   align-items: center;
   padding-left: 15px;
-  border-bottom: 1.50px solid  #111827;
-  background-color: #F9FAFB;
-  color:  #111827;
+  border-bottom: 1.5px solid #111827;
+  background-color: #f9fafb;
+  color: #111827;
   text-decoration: none;
 }
 
@@ -73,12 +73,12 @@ body {
 }
 
 .cta {
-  font-family:"Raleway", sans-serif;
+  font-family: "Raleway", sans-serif;
   margin-top: 30px;
   padding: 10px 20px;
   font-weight: 500;
   font-size: 16px;
-  background-color: #4F46E5;
+  background-color: #4f46e5;
   color: #ffffff;
   border-radius: 24px;
   border: none;
@@ -92,4 +92,37 @@ body {
 
 .arrow {
   margin-left: 5px;
+}
+
+.pdf-loader {
+  display: none; /* hidden by default */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(3px);
+  z-index: 9999;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-family: "DM Sans", sans-serif;
+  color: #444;
+}
+
+.spinner {
+  border: 5px solid #eee;
+  border-top: 5px solid #a78bfa; /* violet accent */
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+  margin-bottom: 15px;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
 }
