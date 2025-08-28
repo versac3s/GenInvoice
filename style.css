@@ -149,6 +149,12 @@ body {
   background-color: rgba(99, 102, 241, 0.1);
 }
 
+.theme-toggle-btn.sun-visible:hover {
+  color: #f59e0b;
+  transform: scale(1.1) rotate(15deg);
+  background-color: rgba(253, 230, 138, 0.2);
+}
+
 .main-container {
   max-width: 1400px;
   margin: 0 auto;
@@ -571,11 +577,11 @@ body {
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
-  
+
   .main-container {
     padding: 1rem;
   }
-  
+
   .page-title {
     font-size: 2rem;
   }
@@ -586,46 +592,46 @@ body {
     padding: 1rem;
     flex-wrap: wrap;
   }
-  
+
   .nav-actions {
     gap: 1rem;
   }
-  
+
   .nav-links {
     gap: 1rem;
   }
-  
+
   .form-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .currency-tax-section {
     grid-template-columns: 1fr;
   }
-  
+
   .invoice-form,
   .invoice-preview {
     padding: 1rem;
   }
-  
+
   .invoice-header {
     flex-direction: column;
     gap: 1rem;
   }
-  
+
   .invoice-meta {
     align-items: flex-start;
     text-align: left;
   }
-  
+
   .total-row {
     width: 100%;
   }
-  
+
   .table-container {
     font-size: 0.8rem;
   }
-  
+
   .item-table th,
   .item-table td {
     padding: 0.5rem;
@@ -638,39 +644,39 @@ body {
     gap: 0.8rem;
     width: 100%;
   }
-  
+
   .nav-links {
     order: 2;
     width: 100%;
     justify-content: center;
   }
-  
+
   .theme-toggle-btn {
     order: 1;
   }
-  
+
   .page-title {
     font-size: 1.5rem;
   }
-  
+
   .invoice-form,
   .invoice-preview {
     padding: 0.75rem;
   }
-  
+
   .form-section h3 {
     font-size: 1rem;
   }
-  
+
   .invoice-box {
     padding: 1rem;
     font-size: 0.8rem;
   }
-  
+
   .company-name {
     font-size: 1.1rem;
   }
-  
+
   .download-btn {
     padding: 0.75rem 1.5rem;
     font-size: 0.9rem;

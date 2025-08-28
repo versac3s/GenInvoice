@@ -1,321 +1,329 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Create Invoice</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Edu+AU+VIC+WA+NT+Guides:wght@400..700&family=Gochi+Hand&family=Homemade+Apple&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Raleway:ital,wght@0,100..900;1,100..900&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap"
-      rel="stylesheet"
-    />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.js"></script>
-  </head>
-  <body>
-    <header class="navbar">
-      <div class="logo">
-        <img src="gil.png" alt="GENINVOICE Logo" />
-      </div>
-      <div class="nav-actions">
-        <nav class="nav-links">
-          <a href="index.html">Home</a>
-          <a href="invoice.html">Invoice</a>
-        </nav>
-        <button id="theme-toggle" class="theme-toggle-btn">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" class="moon-icon">
-            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-          </svg>
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" class="sun-icon" style="display: none;">
-            <circle cx="12" cy="12" r="5"></circle>
-            <line x1="12" y1="1" x2="12" y2="3"></line>
-            <line x1="12" y1="21" x2="12" y2="23"></line>
-            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-            <line x1="1" y1="12" x2="3" y2="12"></line>
-            <line x1="21" y1="12" x2="23" y2="12"></line>
-            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-          </svg>
-        </button>
-      </div>
-    </header>
 
-    <div class="main-container">
-      <h1 class="page-title">Create Invoice</h1>
-      
-      <div class="invoice-container">
-        <section class="invoice-form">
-          <div class="form-header">
-            <h2>Invoice Form</h2>
-          </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Create Invoice</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Edu+AU+VIC+WA+NT+Guides:wght@400..700&family=Gochi+Hand&family=Homemade+Apple&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Raleway:ital,wght@0,100..900;1,100..900&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap"
+    rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.js"></script>
+</head>
 
-          <div class="form-section">
-            <h3>Company Information</h3>
-            <div class="form-grid">
-              <div class="form-group">
-                <label for="companyName">Company Name</label>
-                <input type="text" id="companyName" placeholder="Your Company Name" />
-              </div>
-              <div class="form-group">
-                <label for="companyAddress">Company Address</label>
-                <input type="text" id="companyAddress" placeholder="Street, City, Zip" />
-              </div>
-              <div class="form-group">
-                <label for="companyCity">City</label>
-                <input type="text" id="companyCity" placeholder="City Name" />
-              </div>
-              <div class="form-group">
-                <label for="companyPhone">Phone</label>
-                <input type="tel" id="companyPhone" placeholder="+1 (555) 123-4567" />
-              </div>
-              <div class="form-group">
-                <label for="companyEmail">Email</label>
-                <input type="email" id="companyEmail" placeholder="your@email.com" />
-              </div>
-              <div class="form-group">
-                <label for="bankName">Bank Name</label>
-                <input type="text" id="bankName" placeholder="ABC Bank" />
-              </div>
-              <div class="form-group">
-                <label for="accountNumber">Account Number</label>
-                <input type="text" id="accountNumber" placeholder="1234567890" />
-              </div>
-              <div class="form-group">
-                <label for="ifscCode">IFSC / SWIFT Code</label>
-                <input type="text" id="ifscCode" placeholder="ABC0001234" />
-              </div>
-              <div class="form-group">
-                <label for="accountHolder">Account Holder Name</label>
-                <input type="text" id="accountHolder" placeholder="John Doe" />
-              </div>
+<body>
+  <header class="navbar">
+    <div class="logo">
+      <img src="gil.png" alt="GENINVOICE Logo" />
+    </div>
+    <div class="nav-actions">
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="invoice.html">Invoice</a>
+      </nav>
+      <button id="theme-toggle" class="theme-toggle-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"
+          class="moon-icon">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="sun-icon"
+          style="display: none;">
+          <circle cx="12" cy="12" r="5" fill="currentColor" />
+          <line x1="12" y1="1" x2="12" y2="4" />
+          <line x1="12" y1="20" x2="12" y2="23" />
+          <line x1="1" y1="12" x2="4" y2="12" />
+          <line x1="20" y1="12" x2="23" y2="12" />
+          <line x1="4.22" y1="4.22" x2="6.36" y2="6.36" />
+          <line x1="17.64" y1="17.64" x2="19.78" y2="19.78" />
+          <line x1="4.22" y1="19.78" x2="6.36" y2="17.64" />
+          <line x1="17.64" y1="6.36" x2="19.78" y2="4.22" />
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <div class="main-container">
+    <h1 class="page-title">Create Invoice</h1>
+
+    <div class="invoice-container">
+      <section class="invoice-form">
+        <div class="form-header">
+          <h2>Invoice Form</h2>
+        </div>
+
+        <div class="form-section">
+          <h3>Company Information</h3>
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="companyName">Company Name</label>
+              <input type="text" id="companyName" placeholder="Your Company Name" />
+            </div>
+            <div class="form-group">
+              <label for="companyAddress">Company Address</label>
+              <input type="text" id="companyAddress" placeholder="Street, City, Zip" />
+            </div>
+            <div class="form-group">
+              <label for="companyCity">City</label>
+              <input type="text" id="companyCity" placeholder="City Name" />
+            </div>
+            <div class="form-group">
+              <label for="companyPhone">Phone</label>
+              <input type="tel" id="companyPhone" placeholder="+1 (555) 123-4567" />
+            </div>
+            <div class="form-group">
+              <label for="companyEmail">Email</label>
+              <input type="email" id="companyEmail" placeholder="your@email.com" />
+            </div>
+            <div class="form-group">
+              <label for="bankName">Bank Name</label>
+              <input type="text" id="bankName" placeholder="ABC Bank" />
+            </div>
+            <div class="form-group">
+              <label for="accountNumber">Account Number</label>
+              <input type="text" id="accountNumber" placeholder="1234567890" />
+            </div>
+            <div class="form-group">
+              <label for="ifscCode">IFSC / SWIFT Code</label>
+              <input type="text" id="ifscCode" placeholder="ABC0001234" />
+            </div>
+            <div class="form-group">
+              <label for="accountHolder">Account Holder Name</label>
+              <input type="text" id="accountHolder" placeholder="John Doe" />
             </div>
           </div>
+        </div>
 
-          <div class="form-section">
-            <h3>Client Information</h3>
-            <div class="form-grid">
-              <div class="form-group">
-                <label for="clientName">Client Name</label>
-                <input type="text" id="clientName" placeholder="Client Name" />
-              </div>
-              <div class="form-group">
-                <label for="clientCompany">Company Name</label>
-                <input type="text" id="clientCompany" placeholder="Client Company" />
-              </div>
-              <div class="form-group">
-                <label for="clientAddress">Company Address</label>
-                <input type="text" id="clientAddress" placeholder="Street, City, Zip" />
-              </div>
-              <div class="form-group">
-                <label for="clientCity">City</label>
-                <input type="text" id="clientCity" placeholder="City Name" />
-              </div>
-              <div class="form-group">
-                <label for="clientPhone">Phone</label>
-                <input type="tel" id="clientPhone" placeholder="+1 (555) 123-4567" />
-              </div>
-              <div class="form-group">
-                <label for="clientEmail">Email</label>
-                <input type="email" id="clientEmail" placeholder="client@email.com" />
-              </div>
+        <div class="form-section">
+          <h3>Client Information</h3>
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="clientName">Client Name</label>
+              <input type="text" id="clientName" placeholder="Client Name" />
+            </div>
+            <div class="form-group">
+              <label for="clientCompany">Company Name</label>
+              <input type="text" id="clientCompany" placeholder="Client Company" />
+            </div>
+            <div class="form-group">
+              <label for="clientAddress">Company Address</label>
+              <input type="text" id="clientAddress" placeholder="Street, City, Zip" />
+            </div>
+            <div class="form-group">
+              <label for="clientCity">City</label>
+              <input type="text" id="clientCity" placeholder="City Name" />
+            </div>
+            <div class="form-group">
+              <label for="clientPhone">Phone</label>
+              <input type="tel" id="clientPhone" placeholder="+1 (555) 123-4567" />
+            </div>
+            <div class="form-group">
+              <label for="clientEmail">Email</label>
+              <input type="email" id="clientEmail" placeholder="client@email.com" />
             </div>
           </div>
+        </div>
 
-          <div class="form-section">
-            <h3>Additional Comment</h3>
-            <div class="form-group full-width">
-              <label for="invoiceComment">Comment</label>
-              <textarea
-                id="invoiceComment"
-                rows="4"
-                placeholder="Write any notes or special instructions here..."
-              ></textarea>
+        <div class="form-section">
+          <h3>Additional Comment</h3>
+          <div class="form-group full-width">
+            <label for="invoiceComment">Comment</label>
+            <textarea id="invoiceComment" rows="4"
+              placeholder="Write any notes or special instructions here..."></textarea>
+          </div>
+        </div>
+
+        <div class="form-section">
+          <div class="currency-tax-section">
+            <div class="form-group">
+              <label for="currencySelector">Currency</label>
+              <select id="currencySelector">
+                <option value="$" selected>USD ($)</option>
+                <option value="€">EUR (€)</option>
+                <option value="₹">INR (₹)</option>
+                <option value="£">GBP (£)</option>
+                <option value="¥">JPY (¥)</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="taxRate">Tax (%)</label>
+              <input type="number" id="taxRate" value="10" min="0" step="0.01" />
             </div>
           </div>
+        </div>
 
-          <div class="form-section">
-            <div class="currency-tax-section">
-              <div class="form-group">
-                <label for="currencySelector">Currency</label>
-                <select id="currencySelector">
-                  <option value="$" selected>USD ($)</option>
-                  <option value="€">EUR (€)</option>
-                  <option value="₹">INR (₹)</option>
-                  <option value="£">GBP (£)</option>
-                  <option value="¥">JPY (¥)</option>
-                </select>
+        <div class="form-section">
+          <h3>Invoice Items</h3>
+          <div class="table-container">
+            <table class="item-table">
+              <thead>
+                <tr>
+                  <th>Description</th>
+                  <th>Unit Price</th>
+                  <th>Quantity</th>
+                  <th>Total Price</th>
+                  <th width="50"></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><input type="text" class="description" placeholder="Enter item or service" /></td>
+                  <td><input type="number" class="unitPrice" step="0.01" placeholder="0.00" /></td>
+                  <td><input type="number" class="qty" placeholder="1" /></td>
+                  <td><input type="text" class="total" disabled /></td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <template id="invoice-row-template">
+            <tr>
+              <td><input type="text" class="description" placeholder="Enter item or service" /></td>
+              <td><input type="number" class="unitPrice" step="0.01" placeholder="0.00" /></td>
+              <td><input type="number" class="qty" placeholder="1" /></td>
+              <td><input type="text" class="total" disabled /></td>
+              <td class="delete-cell">
+                <button class="delete-btn" type="button">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                      d="M3.375 3C2.339 3 1.5 3.84 1.5 4.875v.75c0 1.036.84 1.875 1.875 1.875h17.25c1.035 0 1.875-.84 1.875-1.875v-.75C22.5 3.839 21.66 3 20.625 3H3.375Z" />
+                    <path fill-rule="evenodd"
+                      d="m3.087 9 .54 9.176A3 3 0 0 0 6.62 21h10.757a3 3 0 0 0 2.995-2.824L20.913 9H3.087Zm6.133 2.845a.75.75 0 0 1 1.06 0l1.72 1.72 1.72-1.72a.75.75 0 1 1 1.06 1.06l-1.72 1.72 1.72 1.72a.75.75 0 1 1-1.06 1.06L12 15.685l-1.72 1.72a.75.75 0 1 1-1.06-1.06l1.72-1.72-1.72-1.72a.75.75 0 0 1 0-1.06Z"
+                      clip-rule="evenodd" />
+                  </svg>
+                </button>
+              </td>
+            </tr>
+          </template>
+
+          <button id="add-row-btn" class="add-btn" type="button">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+              <path fill-rule="evenodd"
+                d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25ZM12.75 9a.75.75 0 0 0-1.5 0v2.25H9a.75.75 0 0 0 0 1.5h2.25V15a.75.75 0 0 0 1.5 0v-2.25H15a.75.75 0 0 0 0-1.5h-2.25V9Z"
+                clip-rule="evenodd" />
+            </svg>
+            Add Item
+          </button>
+        </div>
+      </section>
+
+      <section class="invoice-preview">
+        <div class="form-header">
+          <h2>Invoice Preview</h2>
+        </div>
+
+        <div class="invoice-box" id="invoiceBox">
+          <div class="invoice-header">
+            <div class="company-info">
+              <div class="company-name" id="previewCompanyName">[Company Name]</div>
+              <div id="previewCompanyAddress">[Street Address]</div>
+              <div id="previewCompanyCityZip">[City, ST ZIP Code]</div>
+              <div>Phone: <span id="previewCompanyPhone">[Phone]</span></div>
+              <div>Email: <span id="previewCompanyEmail">[Email]</span></div>
+              <div class="bank-info">
+                <div>Bank: <span id="previewBankName">[Bank Name]</span></div>
+                <div>Account: <span id="previewAccountNumber">[Account No.]</span></div>
+                <div>IFSC/SWIFT: <span id="previewIFSC">[IFSC/SWIFT]</span></div>
+                <div>Holder: <span id="previewAccountHolder">[Holder Name]</span></div>
               </div>
-              <div class="form-group">
-                <label for="taxRate">Tax (%)</label>
-                <input type="number" id="taxRate" value="10" min="0" step="0.01" />
+            </div>
+            <div class="invoice-meta">
+              <div class="logo-section">
+                <img src="gilogo.png" alt="GENINVOICE Logo" class="invoice-logo" />
               </div>
-            </div>
-          </div>
-
-          <div class="form-section">
-            <h3>Invoice Items</h3>
-            <div class="table-container">
-              <table class="item-table">
-                <thead>
-                  <tr>
-                    <th>Description</th>
-                    <th>Unit Price</th>
-                    <th>Quantity</th>
-                    <th>Total Price</th>
-                    <th width="50"></th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td><input type="text" class="description" placeholder="Enter item or service" /></td>
-                    <td><input type="number" class="unitPrice" step="0.01" placeholder="0.00" /></td>
-                    <td><input type="number" class="qty" placeholder="1" /></td>
-                    <td><input type="text" class="total" disabled /></td>
-                    <td></td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            
-            <template id="invoice-row-template">
-              <tr>
-                <td><input type="text" class="description" placeholder="Enter item or service" /></td>
-                <td><input type="number" class="unitPrice" step="0.01" placeholder="0.00" /></td>
-                <td><input type="number" class="qty" placeholder="1" /></td>
-                <td><input type="text" class="total" disabled /></td>
-                <td class="delete-cell">
-                  <button class="delete-btn" type="button">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                      <path d="M3.375 3C2.339 3 1.5 3.84 1.5 4.875v.75c0 1.036.84 1.875 1.875 1.875h17.25c1.035 0 1.875-.84 1.875-1.875v-.75C22.5 3.839 21.66 3 20.625 3H3.375Z" />
-                      <path fill-rule="evenodd" d="m3.087 9 .54 9.176A3 3 0 0 0 6.62 21h10.757a3 3 0 0 0 2.995-2.824L20.913 9H3.087Zm6.133 2.845a.75.75 0 0 1 1.06 0l1.72 1.72 1.72-1.72a.75.75 0 1 1 1.06 1.06l-1.72 1.72 1.72 1.72a.75.75 0 1 1-1.06 1.06L12 15.685l-1.72 1.72a.75.75 0 1 1-1.06-1.06l1.72-1.72-1.72-1.72a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
-                    </svg>
-                  </button>
-                </td>
-              </tr>
-            </template>
-            
-            <button id="add-row-btn" class="add-btn" type="button">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                <path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25ZM12.75 9a.75.75 0 0 0-1.5 0v2.25H9a.75.75 0 0 0 0 1.5h2.25V15a.75.75 0 0 0 1.5 0v-2.25H15a.75.75 0 0 0 0-1.5h-2.25V9Z" clip-rule="evenodd" />
-              </svg>
-              Add Item
-            </button>
-          </div>
-        </section>
-
-        <section class="invoice-preview">
-          <div class="form-header">
-            <h2>Invoice Preview</h2>
-          </div>
-          
-          <div class="invoice-box" id="invoiceBox">
-            <div class="invoice-header">
-              <div class="company-info">
-                <div class="company-name" id="previewCompanyName">[Company Name]</div>
-                <div id="previewCompanyAddress">[Street Address]</div>
-                <div id="previewCompanyCityZip">[City, ST ZIP Code]</div>
-                <div>Phone: <span id="previewCompanyPhone">[Phone]</span></div>
-                <div>Email: <span id="previewCompanyEmail">[Email]</span></div>
-                <div class="bank-info">
-                  <div>Bank: <span id="previewBankName">[Bank Name]</span></div>
-                  <div>Account: <span id="previewAccountNumber">[Account No.]</span></div>
-                  <div>IFSC/SWIFT: <span id="previewIFSC">[IFSC/SWIFT]</span></div>
-                  <div>Holder: <span id="previewAccountHolder">[Holder Name]</span></div>
+              <div class="invoice-details">
+                <div class="invoice-field">
+                  <label>INVOICE #</label>
+                  <input type="text" id="invoiceNumber" readonly />
+                </div>
+                <div class="invoice-field">
+                  <label>DATE</label>
+                  <input type="date" id="invoiceDate" readonly />
                 </div>
               </div>
-              <div class="invoice-meta">
-                <div class="logo-section">
-                  <img src="gilogo.png" alt="GENINVOICE Logo" class="invoice-logo" />
-                </div>
-                <div class="invoice-details">
-                  <div class="invoice-field">
-                    <label>INVOICE #</label>
-                    <input type="text" id="invoiceNumber" readonly />
-                  </div>
-                  <div class="invoice-field">
-                    <label>DATE</label>
-                    <input type="date" id="invoiceDate" readonly />
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="client-section">
-              <h4>TO:</h4>
-              <div id="previewClientName">[Client Name]</div>
-              <div id="previewClientCompany">[Client Company]</div>
-              <div id="previewClientAddress">[Client Address]</div>
-              <div id="previewClientCityZip">[City, ZIP]</div>
-              <div>Phone: <span id="previewClientPhone">[Phone]</span></div>
-              <div>Email: <span id="previewClientEmail">[Email]</span></div>
-            </div>
-
-            <div class="comment-section" id="commentTable">
-              <h4>Comments:</h4>
-              <div id="previewComment">[Any special instructions or comments]</div>
-            </div>
-
-            <div class="items-section">
-              <h4>Invoice Items</h4>
-              <table id="itemsTable">
-                <thead>
-                  <tr>
-                    <th>Description</th>
-                    <th>Unit Price</th>
-                    <th>Qty</th>
-                    <th>Total</th>
-                  </tr>
-                </thead>
-                <tbody id="itemsPreviewBody">
-                  </tbody>
-              </table>
-            </div>
-
-            <div class="billing-total" id="billingTotal">
-              <div class="total-row">
-                <span>Subtotal:</span>
-                <span><span class="currency-symbol">$</span><span id="subtotal">0.00</span></span>
-              </div>
-              <div class="total-row">
-                <span id="taxLabel">Tax:</span>
-                <span><span class="currency-symbol">$</span><span id="tax">0.00</span></span>
-              </div>
-              <div class="total-row total-due">
-                <span>Total Due:</span>
-                <span><span class="currency-symbol">$</span><span id="totalDue">0.00</span></span>
-              </div>
-            </div>
-
-            <div class="invoice-footer">
-              <div class="footer-note">
-                <p>Make all checks payable to <strong id="bottomCompanyName">[Company Name]</strong></p>
-              </div>
-              <div class="footer-contact">
-                <p>If you have any questions concerning this invoice, contact</p>
-                <p><strong><span id="bottomContactPhone">[Phone]</span></strong></p>
-                <p><strong><span id="bottomContactEmail">[Email]</span></strong></p>
-              </div>
-              <div class="thank-you" id="thankYou">
-                <p>THANK YOU FOR YOUR BUSINESS!</p>
-              </div>
             </div>
           </div>
-        </section>
-      </div>
-      
-      <div class="download-section">
-        <button id="downloadPDF" class="download-btn">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M12 2.25a.75.75 0 0 1 .75.75v11.69l3.22-3.22a.75.75 0 1 1 1.06 1.06l-4.5 4.5a.75.75 0 0 1-1.06 0l-4.5-4.5a.75.75 0 1 1 1.06-1.06l3.22 3.22V3a.75.75 0 0 1 .75-.75Z" />
-            <path d="M3.75 20.25a.75.75 0 0 1 0-1.5h16.5a.75.75 0 0 1 0 1.5H3.75Z" />
-          </svg>
-          Download PDF
-        </button>
-      </div>
+
+          <div class="client-section">
+            <h4>TO:</h4>
+            <div id="previewClientName">[Client Name]</div>
+            <div id="previewClientCompany">[Client Company]</div>
+            <div id="previewClientAddress">[Client Address]</div>
+            <div id="previewClientCityZip">[City, ZIP]</div>
+            <div>Phone: <span id="previewClientPhone">[Phone]</span></div>
+            <div>Email: <span id="previewClientEmail">[Email]</span></div>
+          </div>
+
+          <div class="comment-section" id="commentTable">
+            <h4>Comments:</h4>
+            <div id="previewComment">[Any special instructions or comments]</div>
+          </div>
+
+          <div class="items-section">
+            <h4>Invoice Items</h4>
+            <table id="itemsTable">
+              <thead>
+                <tr>
+                  <th>Description</th>
+                  <th>Unit Price</th>
+                  <th>Qty</th>
+                  <th>Total</th>
+                </tr>
+              </thead>
+              <tbody id="itemsPreviewBody">
+              </tbody>
+            </table>
+          </div>
+
+          <div class="billing-total" id="billingTotal">
+            <div class="total-row">
+              <span>Subtotal:</span>
+              <span><span class="currency-symbol">$</span><span id="subtotal">0.00</span></span>
+            </div>
+            <div class="total-row">
+              <span id="taxLabel">Tax:</span>
+              <span><span class="currency-symbol">$</span><span id="tax">0.00</span></span>
+            </div>
+            <div class="total-row total-due">
+              <span>Total Due:</span>
+              <span><span class="currency-symbol">$</span><span id="totalDue">0.00</span></span>
+            </div>
+          </div>
+
+          <div class="invoice-footer">
+            <div class="footer-note">
+              <p>Make all checks payable to <strong id="bottomCompanyName">[Company Name]</strong></p>
+            </div>
+            <div class="footer-contact">
+              <p>If you have any questions concerning this invoice, contact</p>
+              <p><strong><span id="bottomContactPhone">[Phone]</span></strong></p>
+              <p><strong><span id="bottomContactEmail">[Email]</span></strong></p>
+            </div>
+            <div class="thank-you" id="thankYou">
+              <p>THANK YOU FOR YOUR BUSINESS!</p>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
 
-    <script src="script.js"></script>
-  </body>
+    <div class="download-section">
+      <button id="downloadPDF" class="download-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+          <path
+            d="M12 2.25a.75.75 0 0 1 .75.75v11.69l3.22-3.22a.75.75 0 1 1 1.06 1.06l-4.5 4.5a.75.75 0 0 1-1.06 0l-4.5-4.5a.75.75 0 1 1 1.06-1.06l3.22 3.22V3a.75.75 0 0 1 .75-.75Z" />
+          <path d="M3.75 20.25a.75.75 0 0 1 0-1.5h16.5a.75.75 0 0 1 0 1.5H3.75Z" />
+        </svg>
+        Download PDF
+      </button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
 </html>
