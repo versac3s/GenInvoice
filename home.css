@@ -37,8 +37,12 @@ body {
   transition: color 0.3s ease;
 }
 
+.nav-link:visited {
+  color: #1f1f1f;
+}
+
 .nav-link:hover {
-  color: #A78BFA;
+  color: #6D28D9;
 }
 
 .login-btn {
