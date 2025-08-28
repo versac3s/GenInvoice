@@ -12,7 +12,7 @@ function getThemeElements() {
     themeToggleBtn: document.getElementById("theme-toggle"),
     moonIcon: document.querySelector(".moon-icon"),
     sunIcon: document.querySelector(".sun-icon"),
-    body: document.body 
+    body: document.body
   };
 }
 
@@ -30,12 +30,19 @@ function applySavedTheme() {
   if (!themeToggleBtn || !moonIcon || !sunIcon || !body) return;
 
   const isDark = savedTheme === "dark";
-  body.classList.toggle("dark-theme", isDark); 
-  toggleThemeIcons(moonIcon, sunIcon, isDark); 
+  body.classList.toggle("dark-theme", isDark);
+  toggleThemeIcons(moonIcon, sunIcon, isDark);
+}
+
+function updateLogo(isDark) {
+  const logo = document.getElementById("logoImage");
+  if (!logo) return;
+
+  logo.src = isDark ? "gilogo.png" : "gil.png";
 }
 
 function initializeEventListeners() {
-  const { themeToggleBtn, moonIcon, sunIcon, body } = getThemeElements(); 
+  const { themeToggleBtn, moonIcon, sunIcon, body } = getThemeElements();
 
   // Attach click listener to the theme toggle button.
   if (themeToggleBtn && moonIcon && sunIcon && body) {
@@ -48,7 +55,8 @@ function initializeEventListeners() {
       } catch (e) {
         console.warn("Failed to save theme preference:", e);
       }
-      toggleThemeIcons(moonIcon, sunIcon, isDark); 
+      toggleThemeIcons(moonIcon, sunIcon, isDark);
+      updateLogo(isDark);
     });
   }
 
