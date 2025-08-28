@@ -1,63 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>GenInvoice</title>
-    <link rel="stylesheet" href="home.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Edu+AU+VIC+WA+NT+Guides:wght@400..700&family=Gochi+Hand&family=Homemade+Apple&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Raleway:ital,wght@0,100..900;1,100..900&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <header class="navbar">
-      <div class="logo">
-        <img src="gil.png" alt="GENINVOICE Logo" />
-      </div>
-      <div class="nav-actions">
-        <nav class="nav-links">
-          <a href="index.html">Home</a>
-          <a href="invoice.html">Invoice</a>
-        </nav>
-        <button id="theme-toggle" class="theme-toggle-btn">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" class="moon-icon">
-            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-          </svg>
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" class="sun-icon" style="display: none;">
-            <circle cx="12" cy="12" r="5"></circle>
-            <line x1="12" y1="1" x2="12" y2="3"></line>
-            <line x1="12" y1="21" x2="12" y2="23"></line>
-            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-            <line x1="1" y1="12" x2="3" y2="12"></line>
-            <line x1="21" y1="12" x2="23" y2="12"></line>
-            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-          </svg>
-        </button>
-        <!-- <button class="login-btn">Login</button> -->
-      </div>
-    </header>
 
-    <main class="hero">
-      <p class="subheading">create professional</p>
-      <h1 class="main-heading">
-        INVOI<span class="highlight">C</span>ES
-      </h1>
-      <p class="subheading">for free</p>
-      <button class="cta" onclick="goToInvoice()">
-        Start Creating <span class="arrow">→</span>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GenInvoice</title>
+  <link rel="stylesheet" href="home.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Edu+AU+VIC+WA+NT+Guides:wght@400..700&family=Gochi+Hand&family=Homemade+Apple&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Raleway:ital,wght@0,100..900;1,100..900&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap"
+    rel="stylesheet" />
+</head>
+
+<body>
+  <header class="navbar">
+    <div class="logo">
+      <img src="gil.png" alt="GENINVOICE Logo" />
+    </div>
+    <div class="nav-actions">
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="invoice.html">Invoice</a>
+      </nav>
+      <button id="theme-toggle" class="theme-toggle-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"
+          class="moon-icon">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="sun-icon"
+          style="display: none;">
+          <circle cx="12" cy="12" r="5" fill="currentColor" />
+          <line x1="12" y1="1" x2="12" y2="4" />
+          <line x1="12" y1="20" x2="12" y2="23" />
+          <line x1="1" y1="12" x2="4" y2="12" />
+          <line x1="20" y1="12" x2="23" y2="12" />
+          <line x1="4.22" y1="4.22" x2="6.36" y2="6.36" />
+          <line x1="17.64" y1="17.64" x2="19.78" y2="19.78" />
+          <line x1="4.22" y1="19.78" x2="6.36" y2="17.64" />
+          <line x1="17.64" y1="6.36" x2="19.78" y2="4.22" />
+        </svg>
+
       </button>
-    </main>
+      <!-- <button class="login-btn">Login</button> -->
+    </div>
+  </header>
 
-    <script src="script.js"></script>
-    <script>
-      function goToInvoice() {
-        window.location.href = "invoice.html";
-      }
-    </script>
-  </body>
+  <main class="hero">
+    <p class="subheading">create professional</p>
+    <h1 class="main-heading">
+      INVOI<span class="highlight">C</span>ES
+    </h1>
+    <p class="subheading">for free</p>
+    <button class="cta" onclick="goToInvoice()">
+      Start Creating <span class="arrow">→</span>
+    </button>
+  </main>
+
+  <script src="script.js"></script>
+  <script>
+    function goToInvoice() {
+      window.location.href = "invoice.html";
+    }
+  </script>
+</body>
+
 </html>

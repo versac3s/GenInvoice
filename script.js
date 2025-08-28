@@ -12,7 +12,7 @@ function getThemeElements() {
     themeToggleBtn: document.getElementById("theme-toggle"),
     moonIcon: document.querySelector(".moon-icon"),
     sunIcon: document.querySelector(".sun-icon"),
-    body: document.body 
+    body: document.body
   };
 }
 
@@ -20,6 +20,16 @@ function getThemeElements() {
 function toggleThemeIcons(moonIcon, sunIcon, isDark) {
   moonIcon.style.display = isDark ? "none" : "block";
   sunIcon.style.display = isDark ? "block" : "none";
+
+  const themeToggleBtn = document.getElementById("theme-toggle");
+  if (!themeToggleBtn) return;
+
+  // Add a class to the button for styling hover
+  if (isDark) {
+    themeToggleBtn.classList.add("sun-visible");
+  } else {
+    themeToggleBtn.classList.remove("sun-visible");
+  }
 }
 
 function applySavedTheme() {
@@ -30,12 +40,12 @@ function applySavedTheme() {
   if (!themeToggleBtn || !moonIcon || !sunIcon || !body) return;
 
   const isDark = savedTheme === "dark";
-  body.classList.toggle("dark-theme", isDark); 
-  toggleThemeIcons(moonIcon, sunIcon, isDark); 
+  body.classList.toggle("dark-theme", isDark);
+  toggleThemeIcons(moonIcon, sunIcon, isDark);
 }
 
 function initializeEventListeners() {
-  const { themeToggleBtn, moonIcon, sunIcon, body } = getThemeElements(); 
+  const { themeToggleBtn, moonIcon, sunIcon, body } = getThemeElements();
 
   // Attach click listener to the theme toggle button.
   if (themeToggleBtn && moonIcon && sunIcon && body) {
@@ -48,7 +58,7 @@ function initializeEventListeners() {
       } catch (e) {
         console.warn("Failed to save theme preference:", e);
       }
-      toggleThemeIcons(moonIcon, sunIcon, isDark); 
+      toggleThemeIcons(moonIcon, sunIcon, isDark);
     });
   }
 
